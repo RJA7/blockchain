@@ -11,6 +11,14 @@ class BlockChain {
   }
 
   addTransaction(transaction) {
+    if (!transaction.from || !transaction.to) {
+      throw new Error('Transaction must include from and to addresses');
+    }
+
+    if (!transaction.isValid()) {
+      throw new Error('Invalid transaction');
+    }
+
     this.transactions.push(transaction);
   }
 
@@ -23,7 +31,7 @@ class BlockChain {
     chain.push(block);
 
     transactions.length = 0;
-    this.addTransaction(new Transaction(null, rewardAddress, miningReward));
+    transactions.push(new Transaction(null, rewardAddress, miningReward));
   }
 
   getLastBlock() {

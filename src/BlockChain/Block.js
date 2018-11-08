@@ -26,7 +26,19 @@ class Block {
   }
 
   isValid() {
-    return this.hash === this.calcHash();
+    if (this.hash !== this.calcHash()) {
+      return false;
+    }
+
+    const { transactions } = this;
+
+    for (let i = 0, l = transactions.length; i < l; i++) {
+      if (transactions[i].isValid()) continue;
+
+      return false;
+    }
+
+    return true;
   }
 }
 
