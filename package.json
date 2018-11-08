@@ -1,0 +1,23 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RJA7/blockchain.git"
+  },
+  "author": "RJA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RJA7/blockchain/issues"
+  },
+  "homepage": "https://github.com/RJA7/blockchain#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "nodemon": "^1.18.6"
+  }
+}
